@@ -1,0 +1,527 @@
+@charset "UTF-8";
+/* PrismJS 1.15.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript */
+
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+ 
+
+
+pre,
+code {
+  font-size: 90%;
+}
+
+pre {
+  width: 100%;
+  line-height: 1.6;
+}
+
+pre code {
+  padding: 1rem;
+  display: block;
+  overflow: auto;
+  word-break: break-word;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ccc;
+  background: none;
+  font-family: 'Source Code Pro', monospace; 
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-wrap: normal;
+  -moz-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+
+pre[class*="language-"] {
+  overflow: auto;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+  background: #2d2d2d;
+  border-radius: 6px;
+  border-bottom: 4px solid #8585ef;
+}
+
+/* Inline code */
+
+:not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+.callout {
+  background: #f6f6fe;
+  padding: 1rem;
+  border-left: 10px solid #8585ef;
+  margin: 0 0 1rem 0;
+}
+
+.callout strong:first-child {
+  font-family: 'Source Code Pro', monospace; 
+  display: block;
+  margin: 0 0 0.5rem 0;
+}
+
+.callout :last-child {
+  margin-bottom: 0;
+}
+
+
+body {
+  font-family: "Markazi Text", serif;
+  font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 125%;
+  }
+}
+
+code,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Code Pro', monospace; 
+}
+
+p>code,
+li>code {
+  font-size: 85%;
+  background: #eee;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+main section a,
+.site-footer a {
+  text-decoration: underline;
+  color: #60b4ff;
+}
+
+main section a:hover,
+main section a:focus,
+.site-footer a:hover,
+.site-footer a:focus {
+  color: #0076e0;
+}
+
+main p,
+main pre,
+main ol,
+main ul {
+  margin: 0 0 1rem 0;
+}
+
+main p,
+main li {
+  max-width: 600px;
+}
+
+main ul {
+  list-style: none;
+  padding: 0 0 0 1rem;
+}
+
+main ul li {
+  text-indent: -0.7rem;
+}
+
+main ul li::before {
+  content: "▪ ";
+  color: #8585ef;
+}
+
+main ol li,
+main ul li {
+  margin: 0 0 0.25rem;
+}
+
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  -ms-grid-rows: min-content auto min-content;
+  grid-template-rows: min-content auto min-content;
+  /*
+    1   2       3
+  1┌	 ┬─	─	─┐
+   │  │       │
+  2├─┼────┤
+   │  │      │
+   │  │      │
+  3├─┼────┤
+  4└─┴────┘
+  */
+}
+
+@media (max-width: 700px) {
+  body {
+    -ms-grid-columns: 40px 1fr;
+    grid-template-columns: 40px 1fr;
+  }
+}
+
+/* grid-area: row-start / column-start / row-end / column end */
+
+.sidebar-nav {
+  grid-area: 2 / 1 / 3 / 2;
+  padding: 0 0 2rem 0;
+}
+
+main {
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 0 2rem 10rem 2rem;
+}
+
+.site-header {
+  grid-area: 1 / 2 / 2 / 3;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.logo {
+  grid-area: 1 / 1 / 2 / 2;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.site-footer {
+  grid-area: 3 / 1 / 4 / 3;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site-footer>div {
+  padding: 4rem 1.5rem;
+}
+
+.site-footer>div:first-child {
+  margin-right: auto;
+}
+
+.site-footer>div span {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    display: block;
+    padding-bottom: 2rem;
+  }
+  .site-footer>div {
+    padding: 2rem 1rem 0rem 2rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  color: #323339;
+}
+
+.site-header {
+  background: linear-gradient(#a0a0f3, #6a6aeb);
+  padding: 4rem 2rem;
+}
+
+.site-header h1 {
+  color: white;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 1px 0 black;
+  font-size: calc(1rem + 3vw);
+}
+
+.site-header p {
+  font-size: 125%;
+  line-height: 1;
+  margin: 0;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: 2rem;
+  }
+}
+
+.logo {
+  color: white;
+  background: #1d1e22;
+  padding: 2rem 1rem;
+}
+
+.logo svg {
+  display: block;
+  fill: white;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .logo svg {
+    display: none;
+  }
+}
+
+section {
+  margin-bottom: 10rem;
+}
+
+h2 {
+  margin: 2rem 0 0.5rem 0;
+  padding: 2rem 0 1.2rem;
+  position: relative;
+}
+
+h2::after {
+  content: "▪▪▪";
+  opacity: 0.5;
+  letter-spacing: 0.25rem;
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  color: #8585ef;
+}
+
+.sidebar-nav {
+  background: #323339;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-nav h4 {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background: #1d1e22;
+  padding: 1rem 5rem 1rem 1rem;
+  margin: 2rem 0 0.5rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav ul li a {
+  display: block;
+  padding: 0.25rem 1rem;
+  color: #60b4ff;
+}
+
+.sidebar-nav ul li a:focus,
+.sidebar-nav ul li a:hover {
+  color: #cddbff;
+}
+
+.sidebar-nav ul li a.current {
+  background: black;
+}
+
+.sidebar-nav .sticky-inside {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-nav .just-nav {
+  white-space: nowrap;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+}
+
+@media (max-width: 700px) {
+  .sidebar-nav .just-nav {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    display: block;
+    padding-top: 1.25rem;
+    transition: 0.2s;
+    transform: translateX(-210px);
+    background: rgba(0, 0, 0, 0.9);
+  }
+  body.sidebar-is-open .sidebar-nav .just-nav {
+    transform: translateX(0);
+  }
+}
+
+#hamburger {
+  background: none;
+  border: 0;
+  color: white;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-size: 150%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@media (max-width: 700px) {
+  #hamburger {
+    display: block;
+  }
+}
+
+.github-link {
+  display: block;
+  font-size: 55%;
+  text-align: center;
+  margin-top: auto;
+  color: white;
+  background: #8585ef;
+  font-family: 'Source Code Pro', monospace; 
+  padding: 1rem 0;
+}
+
+.github-link:hover,
+.github-link:focus {
+  background: #5858e9;
+}
+
+.github-link svg {
+  vertical-align: middle;
+  fill: white;
+  position: relative;
+  top: -1px;
+}
+
+@media (max-width: 700px) {
+  .github-link {
+    margin-top: 1rem;
+  }
+}
+
+.site-footer {
+  color: white;
+  background-color: #1d1e22;
+  background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.coffee-link svg {
+  fill: brown;
+  vertical-align: bottom;
+  position: relative;
+  top: -2px;
+}
