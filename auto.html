@@ -18,6 +18,8 @@ async function getCurrentDateTime() {
     const serverTime = await getServerTime();
 
     if (serverTime) {
+        console.log('Server time:', serverTime); // Kiểm tra log xem có hiển thị thời gian từ máy chủ không
+
         var today = serverTime.getUTCDay();
         var url;
 
