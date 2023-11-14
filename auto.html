@@ -4,9 +4,9 @@
 // Function để lấy thời gian từ máy chủ
 async function getServerTime() {
     try {
-        const response = await fetch('http://worldtimeapi.org/api/ip'); // WorldTimeAPI, thay đổi đường dẫn nếu cần
+        const response = await fetch('http://worldclockapi.com/api/json/utc/now');
         const serverData = await response.json();
-        return new Date(serverData.utc_datetime);
+        return new Date(serverData.currentDateTime);
     } catch (error) {
         console.error('Error fetching server time:', error);
         return null;
@@ -18,19 +18,12 @@ async function getCurrentDateTime() {
     const serverTime = await getServerTime();
 
     if (serverTime) {
-        var currentDay = serverTime.getDay();
-        var currentHour = serverTime.getHours();
-
-        // Xử lý chuyển đổi ngày khi đến 24:00
-        if (currentHour === 0) {
-            currentDay = (currentDay + 1) % 7;
-        }
-
+        var today = serverTime.getUTCDay();
         var url;
 
-        if (currentDay === 0 || currentDay === 1 || currentDay === 3 || currentDay === 5) {
+        if (today === 0 || today === 1 || today === 3 || today === 5) {
             url = "https://ithkr.pythonanywhere.com";
-        } else if (currentDay === 2 || currentDay === 4 || currentDay === 6) {
+        } else if (today === 2 || today === 4 || today === 6) {
             url = "http://thkr.pythonanywhere.com";
         }
 
