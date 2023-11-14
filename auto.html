@@ -1,11 +1,15 @@
 <script>
 // Thêm đoạn mã JavaScript ở đây
 
+// Set múi giờ Bangkok làm chuẩn
+var bangkokOffset = 7; // UTC+7 (dựa vào giờ mùa không ánh sáng)
 
-var today = new Date().getDay();
+// Lấy ngày theo múi giờ Bangkok
+var bangkokTime = new Date(new Date().getTime() + (bangkokOffset * 60 * 60 * 1000));
+var today = bangkokTime.getDay();
 var url;
 
-if (today === 0 || today === 1 || today === 3 || today === 5) {
+if (today === 1 || today === 3 || today === 5) {
     url = "https://ithkr.pythonanywhere.com";
 } else if (today === 2 || today === 4 || today === 6) {
     url = "http://thkr.pythonanywhere.com";
