@@ -1,0 +1,46 @@
+<script>
+// Thêm đoạn mã JavaScript ở đây
+
+// Function để lấy thời gian từ máy chủ
+async function getServerTime() {
+    try {
+        const response = await fetch('http://worldtimeapi.org/api/ip'); // WorldTimeAPI, thay đổi đường dẫn nếu cần
+        const serverData = await response.json();
+        return new Date(serverData.utc_datetime);
+    } catch (error) {
+        console.error('Error fetching server time:', error);
+        return null;
+    }
+}
+
+// Lấy ngày và giờ hiện tại từ máy chủ
+async function getCurrentDateTime() {
+    const serverTime = await getServerTime();
+
+    if (serverTime) {
+        var currentDay = serverTime.getDay();
+        var currentHour = serverTime.getHours();
+
+        // Xử lý chuyển đổi ngày khi đến 24:00
+        if (currentHour === 0) {
+            currentDay = (currentDay + 1) % 7;
+        }
+
+        var url;
+
+        if (currentDay === 0 || currentDay === 1 || currentDay === 3 || currentDay === 5) {
+            url = "https://ithkr.pythonanywhere.com";
+        } else if (currentDay === 2 || currentDay === 4 || currentDay === 6) {
+            url = "http://thkr.pythonanywhere.com";
+        }
+
+        // Redirect to the URL
+        if (url) {
+            window.location.href = url;
+        }
+    }
+}
+
+// Gọi hàm để lấy ngày và giờ hiện tại từ máy chủ
+getCurrentDateTime();
+</script>
