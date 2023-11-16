@@ -116,7 +116,7 @@
     <section>
       <h2 id="introduction">INTRODUCTION</h2>
 <p>if key not work, just get here, 100% guaranteed work for all server.
-<center><button class="support-button" id="supportButton"><a href="https://mrjotika.github.io/thkr/auto.html"><strong>Get key</strong></a></button></center><br>
+<center><button class="support-button" id="otherButton"><a href="https://mrjotika.github.io/thkr/auto.html"><strong>Get key</strong></a></button></center><br>
 I've uploaded scripts up plantimod, game guardian and this place. Here contains all versions script hack Arena of Valor Thailand, Vietnam, Taiwan, Indonesia, Euro, India, China servers. Come these place to update or obtain keys whenever needed. 
 
 </p>
@@ -186,18 +186,38 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
     <section>
       <h2 id="practical-usage">Makes a donation</h2>
 <p>"I have created a script to support gaming for free, without earning any money through shortened links, to ensure the most comfortable experience for everyone. I hope that you can support me financially so that I can continuously maintain and update this script for as long as possible, and continue to accompany everyone. I wish you all the most relaxing moments." </p>
-<strong><button class="support-button" id="supportButton"><a href="https://ko-fi.com/bexiu">Support Me</a></button></strong>
+<button class="support-button" id="supportButton"><a href="https://ko-fi.com/bexiu"><strong>Support Me</strong></a></button>
 
 <script>
-  var buttonColors = ["#4CAF50", "#FFC107", "#2196F3", "#FF5722", "#9C27B0", "#FF9800", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548", "#FF5722", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548"];
-  var index = 0;
+  var buttonColors = ["#FFC107", "#2196F3", "#FF5722", "#9C27B0", "#FF9800", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548", "#FF5722", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548"];
+  
+  var indexSupport = 0;
+  var indexOtherButton = 0;
+  
   var supportButton = document.getElementById("supportButton");
+  var otherButton = document.getElementById("otherButton");
+
+  supportButton.addEventListener("click", function() {
+    // Code xử lý khi supportButton được click
+    alert("supportButton được click!");
+  });
+
+  otherButton.addEventListener("click", function() {
+    // Code xử lý khi otherButton được click
+    alert("otherButton được click!");
+  });
 
   setInterval(function() {
-    supportButton.style.backgroundColor = buttonColors[index];
-    index = (index + 1) % buttonColors.length;
+    supportButton.style.backgroundColor = buttonColors[indexSupport];
+    indexSupport = (indexSupport + 1) % buttonColors.length;
+  }, 2000);
+
+  setInterval(function() {
+    otherButton.style.backgroundColor = buttonColors[indexOtherButton];
+    indexOtherButton = (indexOtherButton + 1) % buttonColors.length;
   }, 2000);
 </script>
+
 
 
     </section>
@@ -209,7 +229,7 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
   <footer class="site-footer">
 
         <div class="footer-info">
-    <span>&copy;2023 With metta BEXIU[GG]V2script all free</span>
+    <span>&copy;2023 With metta BEXIU[GG]V2script</span>
     <a href="#practical-usage" class="coffee-link">
       <svg width="20" height="20" viewBox="0 0 24 24">
         <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
