@@ -28,49 +28,7 @@
     50% { box-shadow: 0 0 20px #4CAF50; }
     100% { box-shadow: 0 0 5px #4CAF50; }
   }
-#footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #ddd;
-  padding: 0 20px;
-}
 
-.footer-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-info span {
-  margin-bottom: 5px;
-}
-
-.footer-info a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-}
-
-.footer-info svg {
-  margin-right: 5px;
-}
-
-#visitor-list {
-  max-height: 100px;
-  overflow: auto;
-  text-align: left;
-}
-
-#visitor-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#visitor-list li {
-  margin: 5px;
 </style>
 </head>  
  
@@ -115,7 +73,7 @@
     
     <section>
       <h2 id="introduction">INTRODUCTION</h2>
-<p>if key not work, just get here, work for all server.
+<p>if key not work, just get here, 100% guaranteed work for all server.
 <center><button class="support-button" id="otherButton"><a href="https://mrjotika.github.io/thkr/auto.html"><strong>Get key</strong></a></button></center><br>
 I've uploaded scripts up plantimod, game guardian and this place. Here contains all versions script hack Arena of Valor Thailand, Vietnam, Taiwan, Indonesia, Euro, India, China servers. Come these place to update or obtain keys whenever needed. 
 
@@ -186,26 +144,16 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
     <section>
       <h2 id="practical-usage">Makes a donation</h2>
 <p>"I have created a script to support gaming for free, without earning any money through shortened links, to ensure the most comfortable experience for everyone. I hope that you can support me financially so that I can continuously maintain and update this script for as long as possible, and continue to accompany everyone. I wish you all the most relaxing moments." </p>
-<center><button class="support-button" id="supportButton"><a href="https://ko-fi.com/bexiu"><strong>Support Me</strong></a></button></center>
+<button class="support-button" id="supportButton"><a href="https://ko-fi.com/bexiu"><strong>Support Me</strong></a></button>
 
 <script>
-  var buttonColors = ["#FFC107", "#2196F3", "#FF5722", "#9C27B0", "#FF9800", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548", "#FF5722", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548"];
+  var buttonColors = ["#FFC107", "#2196F3", "#FF5722", "#9C27B0", "#FF9800", "#00BCD4", "#8BC34A", "#FFEB3B", "#03A9F4", "#E91E63", "#CDDC39", "#607D8B", "#009688", "#F44336", "#673AB7", "#795548"];
   
   var indexSupport = 0;
   var indexOtherButton = 0;
   
   var supportButton = document.getElementById("supportButton");
   var otherButton = document.getElementById("otherButton");
-
-  supportButton.addEventListener("click", function() {
-    // Code xử lý khi supportButton được click
-    alert("supportButton được click!");
-  });
-
-  otherButton.addEventListener("click", function() {
-    // Code xử lý khi otherButton được click
-    alert("otherButton được click!");
-  });
 
   setInterval(function() {
     supportButton.style.backgroundColor = buttonColors[indexSupport];
@@ -217,6 +165,7 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
     indexOtherButton = (indexOtherButton + 1) % buttonColors.length;
   }, 2000);
 </script>
+
 
 
 
@@ -237,79 +186,13 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
       <span style="color: #FFEB3B;">Buy me a Coffee</span>
 
     </a>
-    <span>Number of visitors: <button id="visitor-count">0</button></span>
-    <span>Web IP: <button id="ip-address"></button></span>
+    <span><!-- Start: Copyright 2023 TraceMyIP.org Service Code (014502-11162023)- DO NOT MODIFY //-->
+<div id="elemID031021" style="line-height:16px;text-align:center;position:relative;z-index:100000;"><script async type="text/javascript" src="//s3.tracemyip.org/vLg/lgUrl.php?pidnVar2=69419&amp;prtVar2=3&amp;stlVar2=1306&amp;rgtype=4684NR-IPIB&amp;scvVar2=12&amp;gustVarS=3&amp;gustVarU=49370&amp;gustVarM=2"></script><noscript><a title="Visitor IP notifications" href="https://www.tracemyip.org/pv1-3-49370-2"><img src="//s3.tracemyip.org/vLg/1306/4684NR-IPIB/69419/3/12/ans/" alt="Visitor IP Notifications" referrerpolicy="no-referrer-when-downgrade" style="border:0px;"></a></noscript></div> <!-- End: TraceMyIP.org Service Code //--></span>
   </div>
   
 </div>
 
-<script>
-// Function to get IP address
-function getIP(json) {
-  var ipAddress = json.ip;
-  document.getElementById("ip-address").textContent = ipAddress;
-  addVisitor(ipAddress);
-}
 
-// Function to count visitors and display the list
-function countVisitor() {
-  if (localStorage.page_views) {
-    localStorage.page_views = Number(localStorage.page_views) + 1;
-  } else {
-    localStorage.page_views = 1;
-  }
-  document.getElementById("visitor-count").textContent = localStorage.page_views;
-  displayVisitors();
-}
-
-// Function to add visitor to the list
-function addVisitor(ip) {
-  if (localStorage.visitor_list) {
-    var visitorList = JSON.parse(localStorage.visitor_list);
-    visitorList.push(ip);
-    localStorage.visitor_list = JSON.stringify(visitorList);
-  } else {
-    var visitorList = [ip];
-    localStorage.visitor_list = JSON.stringify(visitorList);
-  }
-  saveToFile(ip);
-  displayVisitors();
-}
-
-// Function to save visitor's IP to file
-function saveToFile(ip) {
-  var data = "IP Address: " + ip + "\r\n";
-  var blob = new Blob([data], { type: 'text/plain' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.download = 'visitor_info.txt';
-  a.href = url;
-  a.textContent = '';
-  document.body.appendChild(a);
-}
-
-// Function to display visitors
-function displayVisitors() {
-  if (localStorage.visitor_list) {
-    var visitorList = JSON.parse(localStorage.visitor_list);
-    var visitorUl = document.getElementById("visitor-ul");
-    visitorUl.innerHTML = '';
-    visitorList.forEach(function(visitor) {
-      var li = document.createElement("li");
-      li.appendChild(document.createTextNode(visitor));
-      visitorUl.appendChild(li);
-    });
-  }
-}
-
-// Get the visitor's IP
-var script = document.createElement('script');
-script.src = 'https://api.ipify.org?format=jsonp&callback=getIP';
-document.body.appendChild(script);
-
-// Count the visitor
-countVisitor();
-</script>
         
   </footer>
 
