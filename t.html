@@ -141,7 +141,7 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
 
     <section>
       <h2 id="practical-usage">Makes a donation</h2>
-<p>"I have created a script to support gaming for free, without earning any money through shortened links, to ensure the most comfortable experience for everyone. I hope that you can support me financially so that I can continuously maintain and update this script for as long as possible, and continue to accompany everyone. I wish you all the most relaxing moments." </p>
+<p>If you choose to donate, I'll send you a new key each month as a token of appreciation. This helps sustain and support the project's development. Thank you for your contribution!</p>
 <button class="support-button" id="supportButton"><a href="https://ko-fi.com/bexiu"><strong>Support Me</strong></a></button>
 
 <script>
@@ -175,14 +175,14 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
 
         <div class="footer-info">
     <span>&copy;2023 BEXIU[GG]V2script </span>
-    <a href="#practical-usage" class="coffee-link">
+    <a href="https://t.me/atanatiya" style="color: #ffd700;"><img width="20" height="20" viewBox="0 0 24 24" style={{ color:"pink" }} src='phone.png'>My telegram</img></a> 
+    <a href="#practical-usage" class="coffee-link" style="color: #ffd700;">
       <svg width="20" height="20" viewBox="0 0 24 24">
         <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
       </svg>
       Buy me a Coffee
-    </a>
-   
-    <span><a href="https://t.me/atanatiya"> My telegram</a>.</span>
+    </a> 
+
     <span>Web IP: <button id="ip-address"></button></span>
   </div>
   
@@ -269,8 +269,47 @@ countVisitor();
 
 </html>
 
+import React, { Component } from 'react';
+import Icon from '@mdi/react';
+import { mdiAccount } from '@mdi/js';
+
+class App extends Component {
+  render() {
+    return (
+      <Icon path={mdiAccount}
+        title="User Profile"
+        size={1}
+        horizontal
+        vertical
+        rotate={90}
+        color="red"
+        spin
+      />
+    );
+  }
+};
 
 
 
+<template>
+  <svg-icon type="mdi" :path="path"></svg-icon>
+</template>
+
+<script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiPhoneInTalk } from '@mdi/js';
+
+export default {
+  name: "my-component",
+  components: {
+    SvgIcon
+  },
+  data() {
+    return {
+       path: mdiPhoneInTalk,
+    }
+  }
+}
+</script>
 
 
