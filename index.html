@@ -188,73 +188,7 @@ Your device must be rooted, and you can root it quickly within 5 minutes using M
   
 </div>
 
-<script>
-// Function to get IP address
-function getIP(json) {
-  var ipAddress = json.ip;
-  document.getElementById("ip-address").textContent = ipAddress;
-  addVisitor(ipAddress);
-}
 
-// Function to count visitors and display the list
-function countVisitor() {
-  if (localStorage.page_views) {
-    localStorage.page_views = Number(localStorage.page_views) + 1;
-  } else {
-    localStorage.page_views = 1;
-  }
-  document.getElementById("visitor-count").textContent = localStorage.page_views;
-  displayVisitors();
-}
-
-// Function to add visitor to the list
-function addVisitor(ip) {
-  if (localStorage.visitor_list) {
-    var visitorList = JSON.parse(localStorage.visitor_list);
-    visitorList.push(ip);
-    localStorage.visitor_list = JSON.stringify(visitorList);
-  } else {
-    var visitorList = [ip];
-    localStorage.visitor_list = JSON.stringify(visitorList);
-  }
-  saveToFile(ip);
-  displayVisitors();
-}
-
-// Function to save visitor's IP to file
-function saveToFile(ip) {
-  var data = "IP Address: " + ip + "\r\n";
-  var blob = new Blob([data], { type: 'text/plain' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.download = 'visitor_info.txt';
-  a.href = url;
-  a.textContent = '';
-  document.body.appendChild(a);
-}
-
-// Function to display visitors
-function displayVisitors() {
-  if (localStorage.visitor_list) {
-    var visitorList = JSON.parse(localStorage.visitor_list);
-    var visitorUl = document.getElementById("visitor-ul");
-    visitorUl.innerHTML = '';
-    visitorList.forEach(function(visitor) {
-      var li = document.createElement("li");
-      li.appendChild(document.createTextNode(visitor));
-      visitorUl.appendChild(li);
-    });
-  }
-}
-
-// Get the visitor's IP
-var script = document.createElement('script');
-script.src = 'https://api.ipify.org?format=jsonp&callback=getIP';
-document.body.appendChild(script);
-
-// Count the visitor
-countVisitor();
-</script>
         
   </footer>
 
