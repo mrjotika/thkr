@@ -10,38 +10,27 @@
   <link rel="stylesheet" href="style.yt.css">	
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@370;700&family=Source+Code+Pro:wght@370;700&family=Markazi+Text&display=swap&subset=vietnamese" rel="stylesheet">
 
-		<style media="screen">
-			body {
-				overflow: hidden;
-				height: 100%;
-				margin: 0;
-				padding: 0;
-			}
+<style media="screen">
+            #background {
+                min-height: 460px;
+                background-image: url('http://i.imgur.com/OVQkDRE.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
-			img {
-				width: 100%;
-				height: 100%;
-			}
+        </style>
+        <script src="https://mubaidr.js.org/rainyday.js/js/rainyday.min.js"></script>
+        <script>
+            function run() {
+                var rainyDay = new RainyDay({
+                    image: 'background' // Target p element with ID, RainyDay.js will use backgorund image to simulate rain effects.
+                });
+                window.setTimeout(function () {
+                    // rainyDay.destroy()
+                }, 1000)
+            }
 
-		</style>
-		<script src="https://mubaidr.js.org/rainyday.js/js/rainyday.min.js"></script>
-		<script>
-			function run() {
-				var image = document.getElementById('background');
-				image.onload = function () {
-					var engine = new RainyDay({
-						image: this
-					});
-					engine.rain([
-						[0, 2, 200],
-						[3, 3, 1]
-					], 100);
-				};
-				image.crossOrigin = 'anonymous';
-				image.src = 'http://i.imgur.com/OVQkDRE.jpg';
-			}
-
-		</script>
+        </script>
 </head>  
  
 
