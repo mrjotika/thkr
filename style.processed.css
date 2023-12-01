@@ -205,36 +205,6 @@ main section a:focus,
   color: #0076e0;
 }
 
-main p,
-main pre,
-main ol,
-main ul {
-  margin: 0 0 1rem 0;
-}
-
-main p,
-main li {
-  max-width: 600px;
-}
-
-main ul {
-  list-style: none;
-  padding: 0 0 0 1rem;
-}
-
-main ul li {
-  text-indent: -0.7rem;
-}
-
-main ul li::before {
-  content: "▪ ";
-  color: #8585ef;
-}
-
-main ol li,
-main ul li {
-  margin: 0 0 0.25rem;
-}
 
 body {
   margin: 0;
