@@ -8,41 +8,12 @@
   <link rel="stylesheet" href="style.processed.css">
   <link rel="stylesheet" href="style.bt.css">	
   <link rel="stylesheet" href="style.yt.css">	
-  <link rel="stylesheet" href="tree.css">	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@370;700&family=Source+Code+Pro:wght@370;700&family=Markazi+Text&display=swap&subset=vietnamese" rel="stylesheet">
 
 <style>
-$scale: 1em;
-.directory {
-  font-family: monospace;
-  line-height: 2 * $scale;
-  &__child {
-    margin-left: 2 * $scale;
-    position: relative;
-    &:last-child {
-      &::after {
-        display: none;
-      }
-    }
-    &::before {
-      border-bottom: 1px solid;
-      border-left: 1px solid;
-      content: "";
-      height: $scale;
-      left: -$scale;
-      position: absolute;
-      width: 0.7 * $scale;
-    }
-    &::after {
-      border-left: 1px solid;
-      content: "";
-      height: 100%;
-      left: -$scale;
-      position: absolute;
-      top: 0;
-    }
-  }
-}
+
 </style>
 </head>  
  
@@ -103,7 +74,7 @@ The first time the script runs, it takes 20 seconds to load completely. Please b
 
 
 
-
+<div class="callout">
 	<ul class="directory">
   <li><strong>Hack scripts</strong>
     <ul>
@@ -138,7 +109,7 @@ The first time the script runs, it takes 20 seconds to load completely. Please b
   </li>
   </ul>
 
-
+</div>
     </section>
     
     <section>
