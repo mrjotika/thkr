@@ -1,0 +1,28 @@
+.directory {
+  font-family: monospace;
+  line-height: 2em;
+}
+.directory__child {
+  margin-left: 2em;
+  position: relative;
+}
+.directory__child:last-child::after {
+  display: none;
+}
+.directory__child::before {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  content: "";
+  height: 1em;
+  left: -1em;
+  position: absolute;
+  width: 0.7em;
+}
+.directory__child::after {
+  border-left: 1px solid;
+  content: "";
+  height: 100%;
+  left: -1em;
+  position: absolute;
+  top: 0;
+}
