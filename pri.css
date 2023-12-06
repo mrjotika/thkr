@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 .main {
   background: #fcc;
@@ -9,11 +9,6 @@
 .side {
   background: #fea;
   background-image: url("arrow.webp");
-  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 .main,
 .side {
