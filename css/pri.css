@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  gap: 10px;
+  
+}
+.main {
+  background: #fcc;
+}
+.side {
+  background: #fea;
+  background-image: url("arrow.webp");
+}
+.main,
+.side {
+  padding: 2%;
+  border-radius: 10px
+}
+
+@media(max-width: 400px){
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

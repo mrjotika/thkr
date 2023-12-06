@@ -1,0 +1,62 @@
+  .support-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    animation: glowing 2s ease-in-out infinite;
+  }
+
+  @keyframes glowing {
+    0% { box-shadow: 0 0 5px #4CAF50; }
+    50% { box-shadow: 0 0 20px #4CAF50; }
+    100% { box-shadow: 0 0 5px #4CAF50; }
+  }
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  padding: 0 20px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info span {
+  margin-bottom: 5px;
+}
+
+.footer-info a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.footer-info svg {
+  margin-right: 5px;
+}
+
+#visitor-list {
+  max-height: 100px;
+  overflow: auto;
+  text-align: left;
+}
+
+#visitor-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#visitor-list li {
+  margin: 5px;
