@@ -8,6 +8,13 @@
 }
 .side {
   background: #fea;
+  background-image: url("arror.webp");
+  width: 100%;
+    height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .main,
 .side {
