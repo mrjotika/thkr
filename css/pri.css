@@ -8,7 +8,7 @@
 }
 .side {
   background: #fea;
-  background-image: url("img/arrow.webp");
+  background-image: url("./img/arrow.webp");
 }
 .main,
 .side {
