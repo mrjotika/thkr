@@ -16,50 +16,42 @@
           // Lấy danh sách các quốc gia và link tương ứng
           var countries = [
             {
-              "code": "vn",
+              "code": "VN",
               "link": "https://platinmods.com/forums/shared-android-mods-from-everywhere.6/"
             },
             {
-              "code": "tw",
+              "code": "TW",
               "link": "https://mrjotika.github.io/thkr"
             },
             {
-              "code": "in",
+              "code": "IN",
               "link": "https://mrjotika.github.io/thkr/30days.html"
             },
             {
-              "code": "id",
+              "code": "ID",
               "link": "https://thkr.pythonanywhere.com"
             },
             {
-              "code": "th",
+              "code": "TH",
               "link": "https://ithkr.pythonanywhere.com"
             }
           ];
 
-          // Tìm link tương ứng với IP
-          var link;
-          for (var i = 0; i < countries.length; i++) {
-            console.log("Country Code from List: ", countries[i].code);
-            console.log("Country Code from IP: ", ip.substr(0, 2));
-            if (countries[i].code.toLowerCase() === ip.substr(0, 2).toLowerCase()) {
-              link = countries[i].link;
-              // Xử lý khi điều kiện đúng
-              console.log('Tìm thấy quốc gia:', countries[i].code);
-              // Thoát khỏi vòng lặp nếu đã tìm thấy
-              break;
-            }
-          }
+    // Tìm link tương ứng với IP
+    for (var i = 0; i < countries.length; i++) {
+      if (ip.indexOf(countries[i].code) > -1) {
+        var link = countries[i].link;
+        break;
+      }
+    }
 
-          // Nếu không tìm thấy link tương ứng thì truy cập link English
-          if (!link) {
-            link = "https://bard.google.com/chat/2e4b876c3644fd6f";
-          }
+    // Nếu không tìm thấy link tương ứng thì truy cập link English
+    if (!link) {
+      link = "https://example.com/english";
+    }
 
-          // Truy cập vào link
-          window.location.href = link;
-        });
-    });
+    // Truy cập vào link
+    window.location.href = link;
   </script>
 </body>
 </html>
