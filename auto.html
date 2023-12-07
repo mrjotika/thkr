@@ -35,7 +35,7 @@
 
     // Tìm link tương ứng với IP
     for (var i = 0; i < countries.length; i++) {
-      if (ip.indexOf(countries[i].code) > -1) {
+      if (countries[i].code === ip.substr(0, 2)) {
         var link = countries[i].link;
         break;
       }
@@ -43,13 +43,11 @@
 
     // Nếu không tìm thấy link tương ứng thì truy cập link English
     if (!link) {
-      link = "https://google.com.vn";
+      link = "https://bard.google.com/chat/2e4b876c3644fd6f";
     }
 
     // Truy cập vào link
     window.location.href = link;
   </script>
-  <script src="https://unpkg.com/ipify@latest/dist/index.min.js"></script>
-  
 </body>
 </html>
