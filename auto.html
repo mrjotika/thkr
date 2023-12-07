@@ -38,8 +38,12 @@
           }
         ];
 
+
+
         // Tìm link tương ứng với IP
         for (var i = 0; i < countries.length; i++) {
+        	console.log("Country Code from List: ", countries[i].code);
+  console.log("Country Code from IP: ", ip.substr(0, 2));
           if (countries[i].code === ip.substr(0, 2)) {
             var link = countries[i].link;
             break;
