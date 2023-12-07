@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>Chào mừng</title>
+</head>
+<body>
+  <h1>Chào mừng</h1>
+
+  <script>
+    // Lấy IP của người dùng
+    var ip = ipify.get();
+
+    // Lấy danh sách các quốc gia và link tương ứng
+    var countries = [
+      {
+        "code": "vn",
+        "link": "https://platinmods.com/forums/shared-android-mods-from-everywhere.6/"
+      },
+      {
+        "code": "tw",
+        "link": "https://mrjotika.github.io/thkr"
+      },
+      {
+        "code": "in",
+        "link": "https://mrjotika.github.io/thkr/30days.html"
+      },
+      {
+        "code": "id",
+        "link": "https://thkr.pythonanywhere.com"
+      },
+      {
+        "code": "th",
+        "link": "https://ithkr.pythonanywhere.com"
+      }
+    ];
+
+    // Tìm link tương ứng với IP
+    for (var i = 0; i < countries.length; i++) {
+      if (ip.indexOf(countries[i].code) > -1) {
+        var link = countries[i].link;
+        break;
+      }
+    }
+
+    // Nếu không tìm thấy link tương ứng thì truy cập link English
+    if (!link) {
+      link = "https://google.com.vn";
+    }
+
+    // Truy cập vào link
+    window.location.href = link;
+  </script>
+</body>
+</html>
