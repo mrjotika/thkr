@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/style.yt.css">	
  <link rel="stylesheet" href="css/style.css">
  <link rel="stylesheet" href="css/pri.css">
+ <link rel="stylesheet" href="css/menu.scss">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@370;700&family=Source+Code+Pro:wght@370;700&family=Markazi+Text&display=swap&subset=vietnamese" rel="stylesheet">
 
 
@@ -38,7 +39,18 @@ div.right {
  </style>
 </head>  
 <body>
-  
+<div class="wrapper__content">
+  <div class="wrapMenu">
+    <div class="menu menu--bottom-left active" id="menu_top_right">
+      <a class="menu__btn" dd-nav-expand="menu_top_left"><i class="fa fa-bars"></i></a>
+      <ul class="menu__list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>  
   <button id="hamburger" class="support-button">☰</button>
    
   <header class="site-header">
@@ -97,7 +109,7 @@ div.right {
   <article class="main">
 <p>
     <i>Lần đầu chạy script, nó sẽ mất 20 giây để tải hoàn toàn. Hãy kiên nhẫn.</i><br>
-	<p>Script này cung cấp hỗ trợ hack bản đồ cho Arena of Valor trên 7 máy chủ. Hỗ trợ người chơi dễ dàng theo dõi chuyển động và vị trí của đội đối thủ, giúp dễ dàng chiến thắng trong các trận đấu.
+	<p>Script này cung cấp hỗ trợ hack map cho Arena of Valor trên 7 máy chủ. Hỗ trợ người chơi dễ dàng theo dõi chuyển động và vị trí của đội đối thủ, giúp dễ dàng chiến thắng trong các trận đấu.
 	</p>
    Tôi đã tải lên các script lên plantimod, game guardian và nơi này.</p>
 
@@ -273,9 +285,10 @@ Bật "Xoá rp" trước khi tháp chính phá hủy. Tắt khi quay trở lại
 <script src="js/prism.js"></script>
 <script src="js/index.js"></script>
 <script src="js/yt.js"></script>
-        <script src="js/shapes.js"></script>
-        <script src="js/shapegenerator.js"></script>
-
+<script src="js/shapes.js"></script>
+ <script src="js/shapegenerator.js"></script>
+<script src="js/shapegenerator.js"></script>
+<script src="js/menu.js"></script>
         <script>
         generateShapes({
             element: document.body,
