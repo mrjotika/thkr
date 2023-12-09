@@ -1,298 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">   
-<head>  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z35YKCHEE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+        function redirectBasedOnIP() {
+            // Sử dụng XMLHttpRequest để gửi yêu cầu đến dịch vụ API
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://ipinfo.io/json", true);
 
-  gtag('config', 'G-1Z35YKCHEE');
-</script>	
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="nTVVKhrOI-2OtXVy6v2CJc77heOMBjXSi9vR36VjG8E" /> 
-  <meta name="description" content="Script gg hack game Aov, GoB, KDC">
-  <meta name="keywords" content="AOV, LQM, ROV, GoB, Garena,ARENAOFVALOR, BEXIU[GG]SCRIPT, https://is.gd/ibexiu, Guns of Boom, Kingdom Clash, KDC">
-  <meta name="author" content="BEXIU[GG]v2 Script">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARENAOFVALOR ALL SERVER, GoB, Kingdom Clash</title>
-  <link rel="stylesheet" href="css/style.processed.css">
-  <link rel="stylesheet" href="css/style.bt.css">	
-  <link rel="stylesheet" href="css/style.yt.css">	
- <link rel="stylesheet" href="css/style.css">
- <link rel="stylesheet" href="css/pri.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@370;700&family=Source+Code+Pro:wght@370;700&family=Markazi+Text&display=swap&subset=vietnamese" rel="stylesheet">
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var country = response.country;
 
+                    // Ánh xạ quốc gia với ngôn ngữ tương ứng
+                    var languageMapping = {
+                        "VN": "vi",
+                        "TH": "th",
+                        "TW": "tw",
+                        "CN": "tw", // Chung với tiếng Trung
+                        "IN": "in",
+                    };
 
-<style>
-	div.left {
-    float: left;
-    width: 50%;
-}
+                    // Xác định ngôn ngữ
+                    var language = (languageMapping[country] || "en").toLowerCase();
 
-div.right {
-    float: right;
-    width: 50%;
-}
- </style>
-</head>  
-<body>
-  
-  <button id="hamburger" class="support-button">☰</button>
-   
-  <header class="site-header">
-    <h1>ARENA OF VALOR&shy;. hack scripts</h1>
-    <p>The Official of BEXIU[GG]V2 scripts, <a href="https://is.gd/thkr0"> check valied your key</a>.</p>
+                    // Kiểm tra nếu là trường hợp tw=cn thì chuyển về tw.html
+                    if (language === "tw" && country === "CN") {
+                        language = "tw";
+                    }
 
- </header>
-  
-  <div class="logo">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-      <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"></path>
-    </svg>
-  </div>
+                    // Chuyển hướng người dùng
+                    window.location.href = `/thkr/${language}.html`;
+                } else {
+                    // Nếu không xác định được quốc gia, chuyển hướng về trang mặc định
+                    window.location.href = "/thkr";
+                }
+            };
 
-  <nav id="sidebar-nav" class="sidebar-nav">
-    
-    <div class="sticky-inside">
-      
-      <div class="just-nav">
-        <a href="index.html"><h4>BACK HOME</h4></a>
-        <ul>
-        <li><a href="index.html#introduction">Get 24h key</a></li>
-        <li><a href="javascript:void(0);" onclick="openPopup('30days.html#introduction')">Get key 30 days</a></li>
-        <li><a href="#practical-usage">Script hack </a></li>
-        <li><a href="index.html#nonroot">Play without Root</a></li>
-        <li><a href="index.html#getting-started">Video guides</a></li>
-        <li><a href="index.html#installation">Mod futures</a></li>
-        <li><a href="javascript:void(0);" onclick="openPopup('https://t.me/atanatiya')">
-    My telegram
-</a></li>
-        </ul>
-      <script>
-    function openPopup(link) {
-        window.open(link, '_blank', 'width=400,height=400,resizable=yes,scrollbars=yes');
-    }
-</script>
-        
-      </div>
-      
-    </div>
+            xhr.send();
+        }
 
-  </nav>
-    
-  <main>   
-    
-    <section>
-<p id="introduction"><center>Get new key here, work for all server.</center>
-<div class="left">
-<center><button class="support-button" id="otherButton"><a href="https://ez4short.com/thkr" style="color:#ffffff;"><strong>Get-24h-key</strong></a></button></center>
-</div>
-<div class="right">
-<center><button class="support-button" id="supportButton"><a href="30days.html" style="color:#ffffff;"><strong>key-30-days</strong></a></button></center>
-</div>
-</section>
-
-<section>
-<div class="grid">
-  <article class="main">
-<p>
-    <i>The first time the script runs, it takes 20 seconds to load completely. Be patient.</i><br>
-	<p>These scripts provides map hacking support for Arena of Valor on 7 servers. This allows players to easily see the enemy team's movements and positions, making it easier to win games. 
-	</p>
-   I've uploaded scripts to plantimod, game guardian and this place. </p>
-
-</article>
-  <section class="side">
-      Here contains scripts hack Arena of Valor of other 7 servers, Guns of Boom...<br>
-      This One key, you can play on 7 server, Guns of Boom.
-    </p>
-    
- 
-</div>
-<h3 id="practical-usage">Hack script below</h3>
-<ul class="directory">
-  
-    
-      <li class="directory__child">Aov 7 server 
-        <ul>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/LQM VN [64]-BEXIU[GG]V2.lua"><em>LQM Vietnam</em></a></li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/Aov-TW傳說對決[64]-BEXIU[GG]V2.lua"><em>AOV Taiwan</em> </a> </li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/RoV [64]-BEXIU[GG]V2.lua"><em>ROV Thailand</em></a> </li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/ClashofTitans [64]-BEXIU[GG]V2.lua"><em>Clash of Titans</em> </a> </li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/AOV ID[64]-BEXIU[GG]V2.lua"><em>AOV Indo</em></a> </li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/ArenaofValor先行服[64]-BEXIU[GG]V2.lua"><em>AOV China</em> </a> </li>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/AOV EU [64]-BEXIU[GG]V2.lua"><em>AOV Euro</em> </a> </li>        </ul>
-      </li>
-      <li class="directory__child">Kingdom Clash
-        <ul>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/KingdomClash[x64]-BEXIU[GG]v2.lua"><em>KingdomClash</em></a></li>
-        </ul>
-      </li>
-      <li class="directory__child">Guns of Boom 
-        <ul>
-          <li class="directory__child"><a href="https://raw.githubusercontent.com/mrjotika/thkr/main/script/Guns of Boom [64] BEXIU[GG].lua"><em>Guns of Boom</em></a></li>
-        </ul>
-      </li>
-  </li>
-  </ul>
-<!-- partial -->
-</section>
-    </section>
-    
-    <section>
-      <h2 id="nonroot">Play No Root</h2>
-<div class="youtube-player" data-id="-hyomTzxEDs"></div></p>
-  <p>You can play instant by install this with rom 64bit</p>	    
-  <p style="color: #fc0303;"><Strong>Note: </Strong>For AOV, don't import game, you must download file inside virtual android.</p>
-<p><Strong><u>How Play on PC root simulator</u></Strong><br>
-If you are playing on a PC emulator, the gameplay will also be smooth and stable. <br>
-	just follow these 2 steps
-	<div class="youtube-player" data-id="zEiXyjvVbgs"></div>
-<h3>App prepare to play</h3>
- <ul class="directory">
-    <li class="directory__child">Virtual Android 
-        <ul>
-          <li class="directory__child"><a href="https://d.apkpure.com/b/APK/com.pspace.vandroid?version=latest"><em>Virtual Android</em></a></li>
-	</ul>
-      </li>
-      
-      <li class="directory__child">Game guardian 
-        <ul>
-          <li class="directory__child"><p><a href="https://gameguardian.net/forum/files/file/2-gameguardian/?do=download&r=50314&confirm=1"> <em>Game guardian</em> </a> </p></li>
-        </ul>
-      </li>
-      <li class="directory__child">NOX Player PC
-        <ul>
-          <li class="directory__child"><p><a href="https://is.gd/noxplayers"> <em>Nox player</em> </a> </p></li>
-          <li class="directory__child"><p><a href="https://is.gd/MagiskDelta"> <em>Magisk Delta</em> </a> </p></li>
-        </ul>
-      </li>
-      <li class="directory__child">AOV 
-        <ul>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.garena.game.kgvn"><em>LQM VN</em></a></p></li>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.garena.game.kgtw"><em>AOV TAIWAN</em> </a> </p></li>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.garena.game.kgth"> <em>ROV THAILAND</em></a> </p></li>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.garena.game.kgid"><em>AOV INDO</em> </a> </p></li>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.ngame.allstar.eu"><em>AOV EURO</em> </a> </p></li>
-          <li class="directory__child"><p><a href="https://play.google.com/store/apps/details?id=com.clashoftitansandroid.india"><em>AOV INDIA</em> </a> </p></li>
-          <li class="directory__child"><p><a href="https://sj.qq.com/appdetail/com.tencent.ngame.chty"><em>AOV China</em> </a> </p></li>
-        </ul>
-      </li>
-      </li>
-  </ul>
-<!-- partial -->
-Or you can root quickly within 5 minutes using Magisk.<br>
-</p>
-  <P>Install the 64-bit version of the game above,  Game Guardian. After installation, run the script and start playing.</P>
-      
-
-    </section> 
-    
-    
-    <section>
-      <h2 id="getting-started">Videos guide</h2>
-      <p><Strong>How to active Remove report</Strong><br>
-      <div class="youtube-player" data-id="FrQ0JJa-Nc0"></div></p>
-      <p><Strong>How to set up script</Strong>
-      <div class="youtube-player" data-id="YRTc0QeKN2I"></div>
-</p>
-<p><Strong>How to get key</Strong>
-      <div class="youtube-player" data-id="lPFURP1BQ3c"></div>
-</p>
-
-</section>
-    
-    <section>
-      <h2 id="installation">MOD Features</h2>
-      <P>How to use script: Turn on all menu, except 1st menu "Remove rp", only turn ơn before main tower burst, turn off when go back lobby. That's it</p>
-      <div class="callout">
-      	
-<p>
-Remove report (turn on before main tower bust. Turn off when go back to lobby.)<br>
-Hack map<br>
-Can sell everything to earn coin.<br>
-Exit lobby quick (rank)<br>
-iPad view 3 level<br>
-Show HP, skill 3, profile, fix lag, 60 - 120 fps.<br>
-Anti chat-ban can use backlist-words in battle<br>
-Anti-ban<br>
-Special:<br>
-Remove report {anti-report}<br>
-Remove report function, unable to report.<br>
-Completely delete match data.<br>
-Disconnect from the server.<br>
-Block records battle.<br>
-Note:<br>
-Remove rp ~remove report (Match). <br>Turn on "Remove rp" before main tower blow up. Turn off when go back to lobby. Actually don't need turn on.<br>
-
-</p>
-</div>
-    </section>
-    
-
-<script>
-  var buttonColors = ["#E28BB2", "#FF5722", "#9C27B0", "#FF9800", "#8BC34A", "#FFEB3B", "#E91E63", "#F44336", "#673AB7", "#795548", "#FFC107", "#FF8F00", "#FF4081", "#536DFE", "#607D8B"];
-  
-  var indexSupport = 0;
-  var indexOtherButton = 0;
-  
-  var supportButton = document.getElementById("supportButton");
-  var otherButton = document.getElementById("otherButton");
-
-  setInterval(function() {
-    supportButton.style.backgroundColor = buttonColors[indexSupport];
-    indexSupport = (indexSupport + 1) % buttonColors.length;
-  }, 2000);
-
-  setInterval(function() {
-    otherButton.style.backgroundColor = buttonColors[indexOtherButton];
-    indexOtherButton = (indexOtherButton + 1) % buttonColors.length;
-  }, 2000);
-</script>
-
-
-
-    </section>
-    
-  </main>
-  
-  <footer class="site-footer">
-
-        <div class="footer-info">
-    <span>&copy;2023 BEXIU[GG]V2script </span>
-    <a href="javascript:void(0);" onclick="openPopup('https://t.me/atanatiya')" class="coffee-link" style="color: #ffd700;">
-      <svg width="20" height="20" viewBox="0 0 24 24">
-        <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
-      </svg>
-      My telegram
-    </a> 
-
-
-  </div>
-  
-  </div>
-     
-  </footer>
-
-<script src="js/prism.js"></script>
-<script src="js/index.js"></script>
-<script src="js/yt.js"></script>
-        <script src="js/shapes.js"></script>
-        <script src="js/shapegenerator.js"></script>
-
-        <script>
-        generateShapes({
-            element: document.body,
-            options: {
-                colorList: ["#a29bfe", "#ffeaa7", "#fd79a8", "#55efc4", "#ff7675", "#ffb8b8", "#00b894"],
-                numberOfShapes: 26,
-                mode: 1,
-                rotation: true
-            }
-        });
+        // Gọi hàm khi trang được tải
+        window.onload = function () {
+            redirectBasedOnIP();
+        };
     </script>
-  
-</body>
-</html>
