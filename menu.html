@@ -1,88 +1,52 @@
-<header>
-<link rel="stylesheet" href="css/menu.css">
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="css/menu1.css">
+</head>
 <body>
-<div class="wrapper__header">
-  <h1>Hamburger menu to slide nav animation (JavaScript)</h1>
-  <p>
-    The code is fully customizable. You can change the animation, classes and add your own styles/animation.
-  </p>
-  <p>
-    To change the hamburger position and animation direction, below are the list of classes:
-  </p>
-  <ul>
-    <li><b>menu--top-left</b> (top left corner)</li>
-    <li><b>menu--top-right</b> (top right corner)</li>
-    <li><b>menu--bottom-left</b> (bottom left corner)</li>
-    <li><b>menu--bottom-right</b> (bottom right corner)</li>
-    <li><b>menu--center-center</b> (center)</li>
-  </ul>
-</div>
+<main>
 
-<div class="wrapper__content">
-  <div class="wrapMenu">
-    <div class="menu menu--top-left active" id="menu_top_left">
-      <a class="menu__btn" dd-nav-expand="menu_top_left"><i class="fa fa-bars"></i></a>
-      <ul class="menu__list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+<header class="main-header">
+    <div>
+        <a href="index.html" class="main-header__brand">
+            uHost
+        </a></div>
+    <nav class="main-nav">
+        <div class=main-nav__searchbar_container><input type="text" placeholder="Search" class="main-nav__searchbar">
+            <button class="icon"><i class="fas fa-search" aria-hidden="true"></i></button>
+        </div>
+        <ul class="main-nav__items">
+            <li class="main-nav__item">
+                <img class="main-nav__social" src="navbar-icons/social-media__icons/facebook.svg" alt="facebook">
+            </li>
+            <li class="main-nav__item">
+                <img class="main-nav__social" src="navbar-icons/social-media__icons/instagram-bosquejado.svg" alt="instagram">
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+    <div class="main">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">
+            <span class="nav-icon"></span>
+        </label>
+        <ul class="menu">
+            <li><a href="#test1">Test1</a></li>
+            <li><a href="#test2">Test2</a></li>
+            <li><a href="#test3">Test3</a></li>
+        </ul>
     </div>
-  </div>
-  <div class="wrapMenu">
-    <div class="menu menu--top-right" id="menu_top_right">
-      <a class="menu__btn" dd-nav-expand="menu_top_right"><i class="fa fa-bars"></i></a>
-      <ul class="menu__list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrapMenu">
-    <div class="menu menu--bottom-left menu-closed" id="menu_bottom_left">
-      <a class="menu__btn" dd-nav-expand="menu_bottom_left"><i class="fa fa-bars"></i></a>
-      <ul class="menu__list">
-        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-snapchat"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrapMenu">
-    <div class="menu menu--bottom-right menu-closed" id="menu_bottom_right">
-      <a class="menu__btn" dd-nav-expand="menu_bottom_right"><i class="fa fa-bars"></i></a>
-      <ul class="menu__list">
-        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-threads"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrapMenu">
-    <div class="menu menu--center-center" id="menu_center_center">
-      <a class="menu__btn" dd-nav-expand="menu_center_center"><i class="fa fa-bars"></i></a>
-      <ul class="menu__list">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<script src="js/menu.js"></script>
+
+    <section>
+        <div class="slider-wrapper">
+            <img id="main-slider" src="https://via.placeholder.com/1365x528?text=Slider">
+        </div>
+    </section>
+</main>
+
 </body>
-<footer>
-  <p>Inspired by <a href="https://designdrastic.com/">Designdrastic</a></p>
-</footer>
+</html>
