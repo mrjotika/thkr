@@ -36,50 +36,7 @@ div.right {
     width: 50%;
 }
  </style>
-     <script>
-        function redirectBasedOnIP() {
-            // Sử dụng XMLHttpRequest để gửi yêu cầu đến dịch vụ API
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://ipinfo.io/json", true);
 
-            xhr.onload = function () {
-                if (xhr.status == 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    var country = response.country;
-
-                    // Ánh xạ quốc gia với ngôn ngữ tương ứng
-                    var languageMapping = {
-                        "VN": "vi",
-                        "TH": "th",
-                        "TW": "tw",
-                        "CN": "cn", // Chung với tiếng Trung
-                        "IN": "in",
-                    };
-
-                    // Xác định ngôn ngữ
-                    var language = (languageMapping[country] || "en").toLowerCase();
-
-                    // Kiểm tra nếu là trường hợp tw=cn thì chuyển về tw.html
-                    if (language === "tw" && country === "CN") {
-                        language = "tw";
-                    }
-
-                    // Chuyển hướng người dùng
-                    window.location.href = `/thkr/${language}.html`;
-                } else {
-                    // Nếu không xác định được quốc gia, chuyển hướng về trang mặc định
-                    window.location.href = "/thkr";
-                }
-            };
-
-            xhr.send();
-        }
-
-        // Gọi hàm khi trang được tải
-        window.onload = function () {
-            redirectBasedOnIP();
-        };
-    </script>
 </head>  
 <body>
   
