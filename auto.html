@@ -13,11 +13,14 @@
             var popunder = window.open(popunderURL, "_blank");
             popunder.blur();
 
-            // Gọi hàm khi cửa sổ đang đóng
-            window.addEventListener("beforeunload", function () {
-                // Gọi hàm chuyển hướng sau khi popunder đã được hiển thị
+            // Đặt thời gian hiển thị popunder (có thể điều chỉnh)
+            setTimeout(function () {
+                popunder.focus();
+                popunder.location.reload();
+                
+                // Sau khi popunder đã được hiển thị, chuyển hướng đến trang ngôn ngữ
                 redirectBasedOnIP();
-            });
+            }, 1000);
         }
 
         function redirectBasedOnIP() {
@@ -42,16 +45,11 @@
                     // Xác định ngôn ngữ
                     var language = (languageMapping[country] || "en").toLowerCase();
 
-                    // Kiểm tra nếu là trường hợp tw=cn thì chuyển về tw.html
-                    if (language === "tw" && country === "CN") {
-                        language = "tw";
-                    }
-
                     // Chuyển hướng người dùng
-                    window.location.href = `/thkr/${language}.html`;
+                    window.location.href = `/thkr/${language}`;
                 } else {
                     // Nếu không xác định được quốc gia, chuyển hướng về trang mặc định
-                    window.location.href = "/thkr/en.html";
+                    window.location.href = "/thkr";
                 }
             };
 
