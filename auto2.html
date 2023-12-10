@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Redirect</title>
+    <script src="https://cdn.rawgit.com/toddmotto/popunder.js/master/popunder.js"></script>
+    <script>
+        function openPopunderAndRedirect() {
+            // Đặt đường dẫn của popunder
+            var popunderURL = "https://www.toprevenuegate.com/ft016zrer?key=5b58b50c73e4160dbd9de4ab65825321";
+
+            // Tạo một cửa sổ popunder chạy ngầm
+            popunder(popunderURL, '_blank');
+
+            // Gọi hàm khi cửa sổ đang đóng
+            window.addEventListener("beforeunload", function () {
+                // Gọi hàm chuyển hướng sau khi popunder đã được hiển thị
+                redirectBasedOnIP();
+            });
+        }
+
+        function redirectBasedOnIP() {
+            // Sử dụng XMLHttpRequest để gửi yêu cầu đến dịch vụ API
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://ipinfo.io/json", true);
+
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var country = response.country;
+
+                    // Ánh xạ quốc gia với ngôn ngữ tương ứng
+                    var languageMapping = {
+                        "VN": "vi",
+                        "TH": "th",
+                        "TW": "tw",
+                        "CN": "cn", // Dùng "cn" thay vì "tw" nếu là trường hợp tw=cn
+                        "IN": "in",
+                    };
+
+                    // Xác định ngôn ngữ
+                    var language = (languageMapping[country] || "en").toLowerCase();
+
+                    // Kiểm tra nếu là trường hợp tw=cn thì chuyển về tw.html
+                    if (language === "tw" && country === "CN") {
+                        language = "tw";
+                    }
+
+                    // Chuyển hướng người dùng
+                    window.location.href = `/thkr/${language}.html`;
+                } else {
+                    // Nếu không xác định được quốc gia, chuyển hướng về trang mặc định
+                    window.location.href = "/thkr/en.html";
+                }
+            };
+
+            xhr.send();
+        }
+
+        // Gọi hàm khi trang được tải
+        window.onload = function () {
+            openPopunderAndRedirect();
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
