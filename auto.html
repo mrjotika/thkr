@@ -1,57 +1,70 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Chào mừng</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popunder and Language Redirect</title>
+    <script>
+        function openPopunderAndRedirect() {
+            // Đặt đường dẫn của popunder
+            var popunderURL = "https://www.toprevenuegate.com/ft016zrer?key=5b58b50c73e4160dbd9de4ab65825321";
+
+            // Tạo một cửa sổ popunder
+            var popunder = window.open(popunderURL, "_blank");
+            popunder.blur();
+
+            // Gọi hàm khi cửa sổ đang đóng
+            window.addEventListener("beforeunload", function () {
+                // Gọi hàm chuyển hướng sau khi popunder đã được hiển thị
+                redirectBasedOnIP();
+            });
+        }
+
+        function redirectBasedOnIP() {
+            // Sử dụng XMLHttpRequest để gửi yêu cầu đến dịch vụ API
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://ipinfo.io/json", true);
+
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var country = response.country;
+
+                    // Ánh xạ quốc gia với ngôn ngữ tương ứng
+                    var languageMapping = {
+                        "VN": "vi",
+                        "TH": "th",
+                        "TW": "tw",
+                        "CN": "cn", // Dùng "cn" thay vì "tw" nếu là trường hợp tw=cn
+                        "IN": "in",
+                    };
+
+                    // Xác định ngôn ngữ
+                    var language = (languageMapping[country] || "en").toLowerCase();
+
+                    // Kiểm tra nếu là trường hợp tw=cn thì chuyển về tw.html
+                    if (language === "tw" && country === "CN") {
+                        language = "tw";
+                    }
+
+                    // Chuyển hướng người dùng
+                    window.location.href = `/thkr/${language}.html`;
+                } else {
+                    // Nếu không xác định được quốc gia, chuyển hướng về trang mặc định
+                    window.location.href = "/thkr/en.html";
+                }
+            };
+
+            xhr.send();
+        }
+
+        // Gọi hàm khi trang được tải
+        window.onload = function () {
+            openPopunderAndRedirect();
+        };
+    </script>
 </head>
 <body>
-  <h1>Chào mừng</h1>
-
-  <script>
-    // Chờ thư viện được tải xong
-    document.addEventListener("DOMContentLoaded", function() {
-      // Lấy IP của người dùng từ ipinfo.io
-      fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => {
-          var ip = data.ip;
-          // Lấy danh sách các quốc gia và link tương ứng
-          var countries = [
-            {
-              "code": "VN",
-              "link": "https://platinmods.com/forums/shared-android-mods-from-everywhere.6/"
-            },
-            {
-              "code": "TW",
-              "link": "https://mrjotika.github.io/thkr"
-            },
-            {
-              "code": "IN",
-              "link": "https://mrjotika.github.io/thkr/30days.html"
-            },
-            {
-              "code": "ID",
-              "link": "https://thkr.pythonanywhere.com"
-            },
-            {
-              "code": "TH",
-              "link": "https://ithkr.pythonanywhere.com"
-            }
-          ];
-
-    // Tìm link tương ứng với IP
-    for (var i = 0; i < countries.length; i++) {
-      if (ip.indexOf(countries[i].code) > -1) {
-        var link = countries[i].link;
-        break;
-      }
-    }
-
-    // Nếu không tìm thấy link tương ứng thì truy cập link English
-    if (!link) {
-      link = "https://example.com/english";
-    }
-
-    // Truy cập vào link
-    window.location.href = link;
-  </script>
+    <p>Welcome to the website!</p>
 </body>
 </html>
