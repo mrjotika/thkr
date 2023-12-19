@@ -17,22 +17,33 @@
 Gởi tôi các thông tin:
 <p>
 <ol>
-  <li>Trang đặt get key</li>
+  <li>Trang sẽ đặt link lấy key</li>
   <li>
     <script>
-      document.querySelector("a").addEventListener("click", function() {
-        this.href = "https://ez4short.com/ref/bexiu";
-        this.style.display = "block";
+      document.addEventListener("DOMContentLoaded", function() {
+        var link = document.getElementById("ez4shortLink");
+
+        link.addEventListener("mouseover", function() {
+          link.innerHTML = "<a href='https://ez4short.com' target='_blank'>https://ez4short.com</a>";
+        });
+
+        link.addEventListener("mouseout", function() {
+          link.innerHTML = "<a href='#' id='ez4shortLink'>ez4short.com</a>";
+        });
+
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          window.location.href = "https://ez4short.com/ref/bexiu";
+        });
       });
     </script>
-    Tạo tài khoản <a href="https://ez4short.com/ref/bexiu" onclick="this.href='https://ez4short.com/ref/bexiu'" style="display: none;">ez4short.com</a>
-  </li>
-  <li>Họ tên</li>
-  <li>Tên trang web, tele v.v... bạn muốn hiển thị trong script</li>
+    Tạo tài khoản <span id="ez4shortLink"><a href='#'>ez4short.com</a></span>
+  </li>  <li>Tên web hiển thị trong script</li><li>Họ tên</li>
 </ol>
 
-	<p>Trang get key bạn có thể đặt ở group tele, fb, Youtube, Zl...</p>
-	<p>Đăng ký tài khoản trang kiếm tiền short link, yêu cầu bắt buộc chọn ez4short qua link trên của tôi thì mới vô hệ thống được. </p>
+	<p>💎 1. Trang get key bạn có thể đặt ở group tele, fb, Youtube, Zl...</p>
+	<p>💎 2. Đăng ký tài khoản trang kiếm tiền short link, yêu cầu bắt buộc chọn ez4short qua link trên của tôi thì mới vô hệ thống được. Nếu cần trang khác, hãy nói tôi.</p>
+	<p>💎 3. Trang web, tele v.v... bạn muốn hiển thị trong script khi tôi chuyển script qua để bạn gởi cho thành viên của bạn.</p>
 	<div class="alert alert-success" role="alert"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Hãy gởi thông tin qua tele<a class="alert-link" href="https://t.me/atanatiya"> t.me/ibexiu</a></div>
 	
 </p>
