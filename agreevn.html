@@ -7,8 +7,24 @@
 <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff"><!--  --><!--    Stylesheets--><!--    =============================================--><!-- Default stylesheets--><link href="https://prium.github.io/tryposh/assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Template specific stylesheets--><link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/iconsmind/iconsmind.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/css-hamburgers/dist/hamburgers.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/prism/prism.css" rel="stylesheet"><!-- Main stylesheet and color file--><link href="https://prium.github.io/tryposh/assets/css/style.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/css/custom.css" rel="stylesheet"></head><body data-spy="scroll" data-target=".inner-link" data-offset="60"><main><div class="znav-container" id="znav-container"><div class="container"><nav class="navbar navbar-toggleable-md"><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><div class="hamburger hamburger--emphatic"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></button><a class="navbar-brand overflow-hidden" href="index.html"><img src='https://mrjotika.github.io/thkr/assets/images/posh-logo-white.png' alt='logo' width='70px'></a><div class="collapse navbar-collapse" id="navbarNavDropdown"><ul class="navbar-nav ml-auto"><li><a href="JavaScript:void(0)">Homes</a><ul class="dropdown dropdown-push-left"><li><a href="script.html">Script Hack</a></li><li><a href="premium.html">Script Donator</a></li><li><a href="video.html">Video Guides</a></li><li><a href="feature.html">Mod Feature</a></li><li><a href="prepare.html">No Root</a></li></ul></li><li><a href="JavaScript:void(0)">Pages</a><ul class="dropdown"><!--<li><a href="page-starter.html">Invite cooperation</a></li><li><a href="JavaScript:void(0)">Sell entire system</a></li>--><li><a href="contact.html">Contact</a></li>
-</ul></div></div></div></div></div></li></ul></div></nav></div><!-- /.container--></div><!-- /.znav-container--></section>
+<meta name="theme-color" content="#ffffff"><!--  --><!--    Stylesheets--><!--    =============================================--><!-- Default stylesheets--><link href="https://prium.github.io/tryposh/assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Template specific stylesheets--><link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/iconsmind/iconsmind.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/css-hamburgers/dist/hamburgers.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/lib/prism/prism.css" rel="stylesheet"><!-- Main stylesheet and color file--><link href="https://prium.github.io/tryposh/assets/css/style.css" rel="stylesheet"><link href="https://prium.github.io/tryposh/assets/css/custom.css" rel="stylesheet"></head><body data-spy="scroll" data-target=".inner-link" data-offset="60"><main><div class="znav-container" id="znav-container"><div class="container"><nav class="navbar navbar-toggleable-md"><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><div class="hamburger hamburger--emphatic"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></button><a class="navbar-brand overflow-hidden" href="index.html"><img src='https://mrjotika.github.io/thkr/assets/images/posh-logo-white.png' alt='logo' width='70px'></a><div class="collapse navbar-collapse" id="navbarNavDropdown"><ul class="navbar-nav ml-auto"><li><a href="JavaScript:void(0)">Homes</a><ul class="dropdown dropdown-push-left"><li><a href="script.html">Script Hack</a></li><li><a href="premium.html">Script Donator</a></li><li><a href="video.html">Video Guides</a></li><li><a href="feature.html">Mod Feature</a></li><li><a href="prepare.html">No Root</a></li></ul></li><li><a href="JavaScript:void(0)">Pages</a><ul class="dropdown" id="pagesSubMenu"> <!-- Thêm id cho ul mới -->
+                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        // Sử dụng ipinfo.io để lấy thông tin về địa chỉ IP
+                        $.get("https://ipinfo.io", function(response) {
+                            // Kiểm tra xem quốc gia có phải là Việt Nam hay không
+                            if (response.country === "VN") {
+                                // Hiển thị sub menu cho địa chỉ IP của Việt Nam
+                                $("#pagesSubMenu").append("<li><a href='partnervn.html'>Mời đối tác</a></li><li><a href='contact.html'>Contact</a></li>");
+                            } else {
+                                // Hiển thị sub menu cho địa chỉ IP không phải là Việt Nam
+                                $("#pagesSubMenu").append("<li><a href='contact.html'>Contact</a></li>");
+                            }
+                        }, "jsonp");
+                    });
+                </script>
+</ul></div></div></div></div></div></li></ul></div></nav></div><!-- /.container--></div><!-- /.znav-container-->
 
 <section class="p-0 color-white font-1" id="header-video"><div class="background-holder overlay" style="background-image:url(assets/images/shake.jpg);"><video autoplay="autoplay" loop="loop" muted="muted"><source src="https://prium.github.io/tryposh/assets/videos/demo/video.webm" type="video/webm"/><source src="https://prium.github.io/tryposh/assets/videos/demo/video.mp4" type="video/mp4"/><source src="assets/videos/demo/video.ogv" type="video/ogv"/></video></div><!--/.background-holder--><div class="container"><div class="row h-half align-items-center py-5"><div class="col-md-8 col-lg-5"><h1 class="fs-3 fs-md-4 mb-3">Đăng ký</h1><p class="lead fs-xs-1">Cùng hợp tác.</p></div></div><!--/.row--></div><!--/.container--></section>
 
@@ -41,18 +57,14 @@ Gởi tôi các thông tin:
   </li>  <li>Tên web hiển thị trong script</li><li>Họ tên</li>
 </ol>
 
-	<p>💎 1. Trang get key bạn có thể đặt ở group tele, fb, Youtube, Zl...</p>
+	<p>💎 1. Trang lấy key bạn có thể đặt ở group tele, fb, Yt, zl... tương tự web tôi</p>
 	<p>💎 2. Đăng ký tài khoản trang kiếm tiền short link, yêu cầu bắt buộc chọn ez4short qua link trên của tôi thì mới vô hệ thống được. Nếu cần trang khác, hãy nói tôi.</p>
 	<p>💎 3. Trang web, tele v.v... bạn muốn hiển thị trong script khi tôi chuyển script qua để bạn gởi cho thành viên của bạn.</p>
-	<div class="alert alert-success" role="alert"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Hãy gởi thông tin qua tele<a class="alert-link" href="https://t.me/atanatiya"> t.me/ibexiu</a></div>
+	<div class="alert alert-success" role="alert"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Hãy gởi thông tin qua tele<a class="alert-link" href="https://t.me/ibexiu"> t.me/ibexiu</a></div>
 	
 </p>
-<p>
-</p></p>
-<p>
 
-
-Thân mến,</br>
+<p>
 Nguyen Hai</p>
 </div>
 
