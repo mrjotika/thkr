@@ -146,7 +146,7 @@
             resizable  : 1
         },
         defaultPopOptions: {
-            cookieExpires : 990000, // in minutes
+            cookieExpires : null, // in minutes
             cookiePath    : '/',
             newTab        : true,
             blur          : true,
