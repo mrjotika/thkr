@@ -54,40 +54,23 @@ ga('send', 'pageview');</script><script src="https://prium.github.io/tryposh/ass
 
 <script type="text/javascript" src="popup.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var googleLink = document.getElementById('google-link');
-        
-        if (googleLink) {
-          googleLink.addEventListener('click', function(event) {
-            // Thực hiện pop-under cho liên kết 'https://ez4short.com/thkr/'
-            var pop = SmartPopunder.make('https://ez4short.com/thkr/', {newTab: true, cookieExpires: 36 * 60 * 60});
+        document.addEventListener('DOMContentLoaded', function() {
+          var googleLink = document.getElementById('google-link');
+          
+          if (googleLink) {
+            googleLink.addEventListener('click', function(event) {
+              // Thực hiện pop-under cho liên kết 'https://www.google.com'
+              var pop = SmartPopunder.make('https://ez4short.com/thkr/', {newTab: true, cookieExpires: 36 * 60 * 60});
 
-            // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
-            setTimeout(function() {
-              window.location.href = googleLink.href;
-            }, 500);
+              // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
+              setTimeout(function() {
+                window.location.href = googleLink.href;
+              }, 500);
 
-            // Ngăn chặn mặc định của sự kiện click
-            event.preventDefault();
-          });
-        }
-
-        // Thêm sự kiện click tự động pop-under cho liên kết 'https://gmail.com/'
-        var gmailLinks = document.querySelectorAll('a:not([id="google-link"])');
-        gmailLinks.forEach(function(link) {
-          link.addEventListener('click', function(event) {
-            // Thực hiện pop-under cho liên kết 'https://gmail.com/'
-            var pop = SmartPopunder.make('30.html', {newTab: true, cookieExpires: 36 * 60 * 60});
-
-            // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
-            setTimeout(function() {
-              window.location.href = link.href;
-            }, 500);
-
-            // Ngăn chặn mặc định của sự kiện click
-            event.preventDefault();
-          });
+              // Ngăn chặn mặc định của sự kiện click
+              event.preventDefault();
+            });
+          }
         });
-      });
     </script>
 </body></html>
