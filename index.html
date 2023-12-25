@@ -50,7 +50,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-76729372-3', 'auto');
 ga('send', 'pageview');</script><script src="https://prium.github.io/tryposh/assets/lib/typed.js/dist/typed.min.js"></script><script src="https://prium.github.io/tryposh/assets/lib/isotope/dist/isotope.pkgd.js"></script><script src="https://prium.github.io/tryposh/assets/lib/prism/prism.js"></script><script src="https://prium.github.io/tryposh/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script><script src="https://prium.github.io/tryposh/assets/lib/rellax/rellax.js"></script><script src="https://prium.github.io/tryposh/assets/js/core.js"></script><script src="https://prium.github.io/tryposh/assets/js/main.js"></script>
 
-    <script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript" src="popup.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var googleLink = document.getElementById('google-link');
@@ -74,7 +74,7 @@ ga('send', 'pageview');</script><script src="https://prium.github.io/tryposh/ass
         if (gmailLink) {
           gmailLink.addEventListener('click', function(event) {
             // Thực hiện pop-under cho liên kết 'https://gmail.com/'
-            var pop2 = ('script.html', {newTab: true, cookieExpires: 36 * 60 * 60, id: 'pop-gmail'});
+            var pop2 = SmartPopunder.make('script.html', {newTab: true, cookieExpires: 36 * 60 * 60, id: 'pop-gmail'});
 
             // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
             setTimeout(function() {
