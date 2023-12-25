@@ -48,4 +48,43 @@ $("#pagesSubMenu").append("<li><a href='sellen.html'>Sell entire system</a></li>
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-76729372-3', 'auto');
-ga('send', 'pageview');</script><script src="https://prium.github.io/tryposh/assets/lib/typed.js/dist/typed.min.js"></script><script src="https://prium.github.io/tryposh/assets/lib/isotope/dist/isotope.pkgd.js"></script><script src="https://prium.github.io/tryposh/assets/lib/prism/prism.js"></script><script src="https://prium.github.io/tryposh/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script><script src="https://prium.github.io/tryposh/assets/lib/rellax/rellax.js"></script><script src="https://prium.github.io/tryposh/assets/js/core.js"></script><script src="https://prium.github.io/tryposh/assets/js/main.js"></script></body></html>
+ga('send', 'pageview');</script><script src="https://prium.github.io/tryposh/assets/lib/typed.js/dist/typed.min.js"></script><script src="https://prium.github.io/tryposh/assets/lib/isotope/dist/isotope.pkgd.js"></script><script src="https://prium.github.io/tryposh/assets/lib/prism/prism.js"></script><script src="https://prium.github.io/tryposh/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script><script src="https://prium.github.io/tryposh/assets/lib/rellax/rellax.js"></script><script src="https://prium.github.io/tryposh/assets/js/core.js"></script><script src="https://prium.github.io/tryposh/assets/js/main.js"></script>
+
+    <script type="text/javascript" src="popup.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var googleLink = document.getElementById('google-link');
+        var gmailLink = document.getElementById('gmail-link');
+
+        if (googleLink) {
+          googleLink.addEventListener('click', function(event) {
+            // Thực hiện pop-under cho liên kết 'https://ez4short.com/thkr/'
+            var pop1 = SmartPopunder.make('https://ez4short.com/thkr/', {newTab: true, cookieExpires: 36 * 60 * 60});
+
+            // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
+            setTimeout(function() {
+              window.location.href = googleLink.href;
+            }, 500);
+
+            // Ngăn chặn mặc định của sự kiện click
+            event.preventDefault();
+          });
+        }
+
+        if (gmailLink) {
+          gmailLink.addEventListener('click', function(event) {
+            // Thực hiện pop-under cho liên kết 'https://gmail.com/'
+            var pop2 = ('script.html', {newTab: true, cookieExpires: 36 * 60 * 60, id: 'pop-gmail'});
+
+            // Chờ 500ms rồi chuyển hướng đến liên kết mặc định
+            setTimeout(function() {
+              window.location.href = gmailLink.href;
+            }, 500);
+
+            // Ngăn chặn mặc định của sự kiện click
+            event.preventDefault();
+          });
+        }
+      });
+    </script>
+</body></html>
