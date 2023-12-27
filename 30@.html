@@ -39,9 +39,7 @@ $("#pagesSubMenu").append("<li><a href='sellen.html'>Sell entire system</a></li>
 <!-- ... Your existing HTML code ... -->
 <p id="keyInfoParagraph">This key you can use for 7 scripts for each 7 servers TH, IN, TW, VN, EU, IN, ID, CN</p>
 <!-- ... Continue with your HTML code ... -->
-	
-	
-	
+
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 $(document).ready(function () {
@@ -55,9 +53,10 @@ $(document).ready(function () {
       // Check if the country is Vietnam
       if (response.country === "VN") {
         // Content to append for Vietnam
-        var additionalContent = "Anh em VN có thể thanh toán qua momo<span class="fw-600 color-warning">t.me/ibexiu</span>  to get key like this
-<div class="text-center mt-5">
-<a class="col-sm-4" href="assets/images/momo.jpg" data-lightbox="data-lightbox" data-title="caption">How get key</a></div>";
+        var additionalContent = "Anh em VN có thể thanh toán qua momo t.me/ibexiu<span class=\"fw-600 color-warning\">t.me/ibexiu</span>  to get key like this" +
+          "<div class=\"text-center mt-5\">" +
+          "<a class=\"col-sm-4\" href=\"assets/images/momo.jpg\" data-lightbox=\"data-lightbox\" data-title=\"caption\">How to get key</a>" +
+          "</div>";
 
         // Append content to the specified paragraph
         $("#" + paragraphId).after(additionalContent);
@@ -66,15 +65,6 @@ $(document).ready(function () {
   });
 });
 </script>
-
-
-
-
-
-
-
-
-
 
 
 
