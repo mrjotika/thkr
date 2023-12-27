@@ -35,27 +35,46 @@ $("#pagesSubMenu").append("<li><a href='sellen.html'>Sell entire system</a></li>
 </script>
 </ul></div></div></div></div></div></li></ul></div></nav></div><!-- /.container--></div><!-- /.znav-container-->
 <hr class="color-9 m-0"><div class="background-10"> <div class="container font-1 fs--1 py-1 color-6"><a href="#">Home </a>/ <a href="#">100%Safe </a>/ <a href="#">Script </a>/ <a href="#">247 </a>/ <a href="#">24h</a>/ donator</div></div><hr class="color-9 m-0"><section class="font-1 py-5"><div class="container"><div class="row"><div class="col pl-lg-8 push-lg-4"><div class="color-warning mb-2"><span class="fa fa-star mr-1"></span><span class="fa fa-star mr-1"></span><span class="fa fa-star mr-1"></span><span class="fa fa-star mr-1"></span><span class="fa fa-star-half-o mr-1"></span><a class="fs--1" href="#"> 4 customer reviews</a></div><h1 class="fs-3">KEY 30 DAYs</h1><div class="badge badge-warning">#1 Best Seller</div><div class="mt-3"><span class="fs-2">$4 </span>&amp; <strong>instant delivery.</strong></div><hr class="color-9"><p class="color-success fw-600 mb-0">In Stock.</p><h6 class="color-5 mb-3">SKU: A099-1041-44</h6><p>You will  <strong>automatically receive the key </strong>as soon as the payment is successful.  After receiving the key, <strong>download the script for donator  </strong> <span class=color-info"> <a href="premium.html">here to use.</a> </span>This key you can use for 7 scripts for each 7 servers TH, IN, TW, VN, EU, IN, ID, CN</p>
-<p id="momo"></p>
 
+<!-- ... Your existing HTML code ... -->
+<p id="keyInfoParagraph">This key you can use for 7 scripts for each 7 servers TH, IN, TW, VN, EU, IN, ID, CN</p>
+<!-- ... Continue with your HTML code ... -->
+	
+	
+	
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 $(document).ready(function () {
-// Sử dụng ipinfo.io để lấy thông tin về địa chỉ IP
-$.get("https://ipinfo.io", function(response) {
-// Kiểm tra xem quốc gia có phải là Việt Nam hay không
-if (response.country === "VN") {
-// Hiển thị sub menu cho địa chỉ IP của Việt Nam
-$("#momo").append("<p>Anh em VN có thể thanh toán qua momo<span class="fw-600 color-warning">Go to your Items</span>  to get key like this
+  // Sử dụng ipinfo.io để lấy thông tin về địa chỉ IP
+  $.get("https://ipinfo.io", function(response) {
+    // Assuming the paragraph has a unique identifier, you can use its id to target it
+    var paragraphId = "keyInfoParagraph";
+
+    // Check if the element with the specified id exists
+    if ($("#" + paragraphId).length) {
+      // Check if the country is Vietnam
+      if (response.country === "VN") {
+        // Content to append for Vietnam
+        var additionalContent = "Anh em VN có thể thanh toán qua momo<span class="fw-600 color-warning">t.me/ibexiu</span>  to get key like this
 <div class="text-center mt-5">
-<a class="col-sm-4" href="assets/images/momo.jpg" data-lightbox="data-lightbox" data-title="caption">How get key</a></div></div>
-</p>");
-} else {
-// Hiển thị sub menu cho địa chỉ IP không phải là Việt Nam
-$("#momo").append("<li><a href='sellen.html'>Sell entire system</a></li><li><a href='contact.html'>Contact</a></li>");
-}
-}, "jsonp");
+<a class="col-sm-4" href="assets/images/momo.jpg" data-lightbox="data-lightbox" data-title="caption">How get key</a></div>";
+
+        // Append content to the specified paragraph
+        $("#" + paragraphId).after(additionalContent);
+      }
+    }
+  });
 });
 </script>
+
+
+
+
+
+
+
+
+
 
 
 
