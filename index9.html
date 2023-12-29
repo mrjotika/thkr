@@ -16,7 +16,7 @@ $.get("https://ipinfo.io", function(response) {
 // Kiểm tra xem quốc gia có phải là Việt Nam hay không
 if (response.country === "VN") {
 // Hiển thị sub menu cho địa chỉ IP của Việt Nam
-$("#pagesSubMenu0").append("<li><a href="script.html">Script Hack</a></li><li><a href="premium.html">Script Donator</a></li><li><a href='scriptvn.html'>Others script</a></li>");
+$("#pagesSubMenu0").append("<li><a href='muavn.html'>Thanh toán Momo</a></li><li><a href='sell.html'>Bán hệ thống</a></li><li><a href='partnervn.html'>Mời đối tác</a></li><li><a href='contact.html'>Contact</a></li>");
 } else {
 // Hiển thị sub menu cho địa chỉ IP không phải là Việt Nam
 $("#pagesSubMenu0").append("<li><a href="script.html">Script Hack</a></li><li><a href="premium.html">Script Donator</a></li>");
@@ -24,7 +24,7 @@ $("#pagesSubMenu0").append("<li><a href="script.html">Script Hack</a></li><li><a
 }, "jsonp");
 });
 </script>
-<li><a href="video.html">Video Guides</a></li><li><a href="feature.html">Mod Feature</a></li><li><a href="prepare.html">No Root</a></li>
+<li><a href="script.html">Script Hack</a></li><li><a href="premium.html">Script Donator</a></li><li><a href="video.html">Video Guides</a></li><li><a href="feature.html">Mod Feature</a></li><li><a href="prepare.html">No Root</a></li>
 </ul></li><li><a href="JavaScript:void(0)">Pages</a><ul class="dropdown" id="pagesSubMenu"> 
 <li><a href='qa.html'>How if change IP</a></li>
 <!-- Thêm id cho ul mới -->
