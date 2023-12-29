@@ -16,7 +16,7 @@ $.get("https://ipinfo.io", function(response) {
 // Kiểm tra xem quốc gia có phải là Việt Nam hay không
 if (response.country === "VN") {
 // Hiển thị sub menu cho địa chỉ IP của Việt Nam
-$("#pagesSubMenu").append("<li><a href='muavn.html'>Thanh toán Momo</a></li><li><a href='sell.html'>Bán hệ thống</a></li><li><a href='partnervn.html'>Mời đối tác</a></li><li><a href='contact.html'>Contact</a></li>");
+$("#pagesSubMenu").append("<li><a href='muavn.html'>Thanh toán Momo</a></li><li><a href='sell.html'>Bán hệ thống</a></li><li><a href='partnervn.html'>Mời đối tác</a></li><li><a href='scriptvn.html'>Others script</a></li><li><a href='contact.html'>Contact</a></li>");
 } else {
 // Hiển thị sub menu cho địa chỉ IP không phải là Việt Nam
 $("#pagesSubMenu").append("<li><a href='sellen.html'>Sell entire system</a></li><li><a href='contact.html'>Contact</a></li>");
