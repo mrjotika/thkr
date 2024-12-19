@@ -1,0 +1,1 @@
+invoke-static {p0}, Lcom/android/support/Login;->Init(Landroid/content/Context;)V
